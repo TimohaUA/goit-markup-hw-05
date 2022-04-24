@@ -778,6 +778,10 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background: rgba(0, 0, 0, 0.2);
 }
 
+.modal_section.is-hidden .modal_window{
+  transform: scale(1.25);
+}
+
 .modal_window {
   width: 528px;
   height: 581px;
@@ -787,23 +791,9 @@ box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
 0px 1px 1px rgba(0, 0, 0, 0.14),
 0px 2px 1px rgba(0, 0, 0, 0.2);
 border-radius: 4px;
-
-/*animation: animate_open 2000ms linear;*/
+transform: scale(1);
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/*@keyframes animate_open {
-  0% {
-    transform: scale(0);
-  }
-
-  50% {
-    transform: scale(0.5);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}*/
 
 .modal_window>button {
   position: absolute;
@@ -823,31 +813,13 @@ border-radius: 4px;
   justify-content: center;
 }
 
-/*.btn_close:hover{
-animation: animate_close 3000ms linear
-}
-
-@keyframes animate_close {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(0.5);
-  }
-
-  100% {
-    transform: scale(0);
-  }
-}*/
-
 .btn_close>svg{
   width: 18px;
   height: 18px;
 }
 
-
-.is-hidden {
+.is-hidden {  
+  transition-delay: 200ms;
   visibility: hidden;
   opacity: 0;
   pointer-events: none;  
